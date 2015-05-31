@@ -2,11 +2,81 @@
 <items version="2" >
 
     <item
-        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/libs/YouTubeAndroidPlayerApi.jar"
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-72266e153fb0555e2a2d1f0f61f2ddfabd38238c.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
-        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-a86f4a9a17f209d6f1b9bd60bea919225c74f7c5.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-531e0dc9aafae3568cce59f34eadc8ed78ee3846.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-531e0dc9aafae3568cce59f34eadc8ed78ee3846.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-e18ff33ee1b69c32e723df8941a455b509c5a2de.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-72266e153fb0555e2a2d1f0f61f2ddfabd38238c.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-e18ff33ee1b69c32e723df8941a455b509c5a2de.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-df1b076a670a1f773d78bb932c9c63284eb05352.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-df1b076a670a1f773d78bb932c9c63284eb05352.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-e86575bb6731dbf2a9f63d1906c42be6f80a7dbc.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-e86575bb6731dbf2a9f63d1906c42be6f80a7dbc.jar" />
+    </item>
+    <item
+        jar="/Users/he/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-c947c3c73672d9f3f2bec002d8f0901538e5b693.jar" />
     </item>
     <item
         jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/libs/YouTubeAndroidPlayerApi.jar"
@@ -14,6 +84,27 @@
         revision="22.0.1"
         sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
         <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-a86f4a9a17f209d6f1b9bd60bea919225c74f7c5.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-a86f4a9a17f209d6f1b9bd60bea919225c74f7c5.jar" />
+    </item>
+    <item
+        jar="/Users/he/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-c947c3c73672d9f3f2bec002d8f0901538e5b693.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ed4060aabc5fe0a8e4e178a89a0848866417418a">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/classes-00b783e4404a5ef6817b55baeee17bd5ac903e40.jar" />
     </item>
 
 </items>

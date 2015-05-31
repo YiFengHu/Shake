@@ -4,13 +4,16 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.+'
+        classpath 'com.android.tools.build:gradle:1.2.3'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
     }
 
     group = "com.github.navasmdc"

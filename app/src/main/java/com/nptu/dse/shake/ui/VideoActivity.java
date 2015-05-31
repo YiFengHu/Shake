@@ -10,8 +10,6 @@ import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.nptu.dse.shake.DeveloperKey;
 import com.nptu.dse.shake.R;
 import com.nptu.dse.shake.RequestCode;
-import com.nptu.dse.shake.R.id;
-import com.nptu.dse.shake.R.layout;
 import com.nptu.dse.shake.queue.VideoQueue;
 import com.nptu.dse.shake.queue.VideoQueue.QueueExecutor;
 
@@ -25,28 +23,21 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 
 	private YouTubePlayerView youtubePlayerView = null;
 	private YouTubePlayer youtubePlayer= null;
-
-	private String videoId = null;
 	private PlayerStateChangeListener playerListener = null;
-	
-	private ArrayList<String> videoIds = null;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video);
 		
-		initPlayList();
-		
-		youtubePlayerView = (YouTubePlayerView) findViewById(R.id.video_youtubeView);
+        initPlayerListener();
+
+        youtubePlayerView = (YouTubePlayerView) findViewById(R.id.video_youtubeView);
 		youtubePlayerView.initialize(DeveloperKey.DEVELOPER_KEY, this);
-		
-		initPlayerListener();
 	}
 
-	private void initPlayList() {
-		videoIds = new ArrayList<String>();
-		
+	private void nextPlayList() {
+
 		QueueExecutor executor = VideoQueue.getInstance().pop();
 		if(executor!=null){
 			executor.execute(youtubePlayer);
@@ -86,12 +77,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 			@Override
 			public void onVideoEnded() {
 				Log.d(TAG, "onVideoEnded");
-//				QueueExecutor executor = VideoQueue.getInstance().pop();
-//				if(executor!=null){
-//					executor.execute(youtubePlayer);
-//				}else{
-//					finish();
-//				}
+                nextPlayList();
 				
 			}
 
@@ -112,13 +98,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 			youtubePlayer.setFullscreen(true);
 			youtubePlayer.setPlayerStateChangeListener(playerListener);
 
-			youtubePlayer.cueVideos(VideoQueue.getInstance().getVideoIds());
-//			QueueExecutor executor = VideoQueue.getInstance().pop();
-//			if(executor!=null){
-//				executor.execute(youtubePlayer);
-//			}else{
-//				finish();
-//			}
+            nextPlayList();
 		}
 	}
 
@@ -126,29 +106,6 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 	protected Provider getYouTubePlayerProvider() {
 		return (YouTubePlayerView) findViewById(R.id.video_youtubeView);
 	}
-	
-	
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		switch(requestCode){
-			case RequestCode.PLAY_MUSIC:
-				
-//			QueueExecutor executor = VideoQueue.getInstance().pop();
-//			if(executor!=null){
-//				executor.execute(youtubePlayer);
-//			}else{
-//				finish();
-//			}
-			
-			break;
-			
-			default:
-				break;
-		}
-	}
-	
-	
 
 	@Override
 	public void onBackPressed() {
@@ -156,21 +113,4 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 		finish();
 	}
 
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-	}
-
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-	}
-
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-	}
 }

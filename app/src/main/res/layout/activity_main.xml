@@ -1,5 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:weightSum="10"
-    tools:context="com.nptu.dse.shake.ui.MainActivity" >
+    android:weightSum="10" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,50 +28,60 @@
             android:orientation="horizontal"
             android:weightSum="3" >
 
-            <LinearLayout
-                android:id="@+id/main_upperSportLayout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_upperSportCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
-	            <ImageView
-	                android:id="@+id/main_upperSportImageView"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent"
-	                android:background="@drawable/selector_yellow_button"
-	                android:clickable="true"
-	                android:src="@drawable/ic_upper_boddy_sport2" />
-            </LinearLayout>
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/yellow"
+                android:clickable="true">
 
-            <LinearLayout
-                android:id="@+id/main_upperSport2Layout"
+                <ImageView
+                    android:id="@+id/main_upperSportImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_upper_boddy_sport2"/>
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_upperSport2CardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/red"
+                android:clickable="true">
+
             <ImageView
                 android:id="@+id/main_upperSport2ImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/selector_red_button"
-                android:clickable="true"
                 android:src="@drawable/ic_upper_body_sport" />
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            <LinearLayout
-                android:id="@+id/main_lowerSportLayout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_lowerSportCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/green"
+                android:clickable="true">
             <ImageView
                 android:id="@+id/main_lowerSportImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/selector_green_button"
-                android:clickable="true"
                 android:src="@drawable/ic_lower_body_sport" />
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
 
         <LinearLayout
@@ -87,50 +96,56 @@
             android:orientation="horizontal"
             android:weightSum="3" >
 
-            <LinearLayout
-                android:id="@+id/main_lallBodySportLayout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_allBodySportCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/light_blue"
+                android:clickable="true">
             <ImageView
                 android:id="@+id/main_allBodySportImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/selector_light_blue_button"
-                android:clickable="true"
                 android:src="@drawable/ic_all_body_sport" />
-            </LinearLayout>
+</android.support.v7.widget.CardView>
 
-            <LinearLayout
-                android:id="@+id/main_stretchSportLayout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_stretchSportCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/purple"
+                android:clickable="true">
             <ImageView
                 android:id="@+id/main_stretchSportImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/selector_purple_button"
-                android:clickable="true"
                 android:src="@drawable/ic_stretch_sport" />
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            <LinearLayout
-                android:id="@+id/main_sweatSportLayout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/main_sweatSportCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                card_view:cardElevation="@dimen/elevation"
+                card_view:cardCornerRadius="@dimen/corner_sport_button"
+                card_view:cardBackgroundColor="@color/dark_blue"
+                android:clickable="true">
             <ImageView
                 android:id="@+id/main_sweatSportImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/selector_blue_button"
-                android:clickable="true"
                 android:src="@drawable/ic_sweat_sport" />
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 
@@ -180,15 +195,15 @@
             android:orientation="horizontal"
             android:weightSum="3" >
 
-            <Button
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/main_goButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="right|bottom"
-                android:layout_weight="1"
-                android:background="@drawable/selector_go_button"
                 android:text="@string/go"
-                android:textSize="30sp"/>
+                android:clickable="true"
+                android:visibility="invisible"
+                android:src="@drawable/ic_check"/>
         </LinearLayout>
     </LinearLayout>
 

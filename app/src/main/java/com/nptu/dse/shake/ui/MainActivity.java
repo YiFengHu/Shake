@@ -4,27 +4,22 @@ import java.util.ArrayList;
 
 import com.nptu.dse.shake.BlackBoardItem;
 import com.nptu.dse.shake.R;
-import com.nptu.dse.shake.R.anim;
-import com.nptu.dse.shake.R.drawable;
-import com.nptu.dse.shake.R.id;
-import com.nptu.dse.shake.R.layout;
-import com.nptu.dse.shake.R.menu;
-import com.nptu.dse.shake.R.string;
 import com.nptu.dse.shake.queue.VideoQueue;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -33,12 +28,13 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
-	private static final int ID_UPPER_SPORT_IMAGEVIEW = R.id.main_upperSportImageView;
-	private static final int ID_UPPER_SPORT_2_IMAGEVIEW = R.id.main_upperSport2ImageView;
-	private static final int ID_LOWER_SPORT_IMAGEVIEW = R.id.main_lowerSportImageView;
-	private static final int ID_ALL_BODY_SPORT_IMAGEVIEW = R.id.main_allBodySportImageView;
-	private static final int ID_STRETCH_SPORT_IMAGEVIEW = R.id.main_stretchSportImageView;
-	private static final int ID_SWEAT_SPORT_IMAGEVIEW = R.id.main_sweatSportImageView;
+
+	private static final int ID_UPPER_SPORT_CARDVIEW = R.id.main_upperSportCardView;
+	private static final int ID_UPPER_SPORT_2_CARDVIEW = R.id.main_upperSport2CardView;
+	private static final int ID_LOWER_SPORT_CARDVIEW = R.id.main_lowerSportCardView;
+	private static final int ID_ALL_BODY_SPORT_CARDVIEW = R.id.main_allBodySportCardView;
+	private static final int ID_STRETCH_SPORT_CARDVIEW = R.id.main_stretchSportCardView;
+	private static final int ID_SWEAT_SPORT_CARDVIEW = R.id.main_sweatSportCardView;
 	
 	private static final int ID_FIRST_ROW_IMAGE_VIEW_LAYOUT = R.id.main_firstSportButtonLayout;
 	private static final int ID_FIRST_ROW_BLACK_BOARD_LAYOUT = R.id.main_firstRowblackBoardLayout;
@@ -55,6 +51,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			R.drawable.selector_light_blue_button,
 			R.drawable.selector_purple_button, R.drawable.selector_blue_button };
 
+    private static final int[] backgroundColor = {
+            R.color.yellow, R.color.red,
+            R.color.green,
+            R.color.light_blue,
+            R.color.purple, R.color.dark_blue };
+
 	private static final int[] imageSource = { R.drawable.ic_upper_body_sport,
 			R.drawable.ic_upper_boddy_sport2, R.drawable.ic_lower_body_sport,
 			R.drawable.ic_all_body_sport, R.drawable.ic_stretch_sport,
@@ -66,13 +68,13 @@ public class MainActivity extends Activity implements OnClickListener {
 	private LinearLayout firstRowblackBoardLayout = null;
 	private LinearLayout secondRowblackBoardLayout = null;
 
-	private ImageView upperSportImageView = null;
-	private ImageView upperSport2ImageView = null;
-	private ImageView lowerSportImageView = null;
-	private ImageView allBodySportImageView = null;
-	private ImageView stretchSportImageView = null;
-	private ImageView sweatSportImageView = null;
-	private Button goButton = null;
+	private CardView upperSportCardView = null;
+	private CardView upperSport2CardView = null;
+	private CardView lowerSportCardView = null;
+	private CardView allBodySportCardView = null;
+	private CardView stretchSportCardView = null;
+	private CardView sweatSportCardView = null;
+	private FloatingActionButton goButton = null;
 
 	private ArrayList<BlackBoardItem> blackBoardList = null;
 	
@@ -91,10 +93,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		blackBoardList = new ArrayList<BlackBoardItem>();
 
 		fadeInAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.animation_go_button_fade_in);   
+                R.anim.abc_slide_in_bottom);
 		
 		fadeOutAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.animation_go_button_fade_out);   
+                R.anim.abc_slide_out_bottom);
 		
 		initLayout();
 		
@@ -105,31 +107,32 @@ public class MainActivity extends Activity implements OnClickListener {
 				int positionInList = (Integer)view.getTag();
 				
 				blackBoardList.remove(positionInList);
-				updateBlackBoardView();
+				updateBlackBoardView(ClickType.Remove ,positionInList);
 			}
 		};
+
 	}
 
-	private void initLayout() {
+    private void initLayout() {
 		firstRowImageViewLayout = (LinearLayout)findViewById(ID_FIRST_ROW_IMAGE_VIEW_LAYOUT);
 		firstRowblackBoardLayout = (LinearLayout) findViewById(ID_FIRST_ROW_BLACK_BOARD_LAYOUT);
 		secondRowblackBoardLayout = (LinearLayout) findViewById(ID_SECOND_ROW_BLACK_BOARD_LAYOUT);
 
-		upperSportImageView = (ImageView) findViewById(ID_UPPER_SPORT_IMAGEVIEW);
-		upperSport2ImageView = (ImageView) findViewById(ID_UPPER_SPORT_2_IMAGEVIEW);
-		lowerSportImageView = (ImageView) findViewById(ID_LOWER_SPORT_IMAGEVIEW);
-		allBodySportImageView = (ImageView) findViewById(ID_ALL_BODY_SPORT_IMAGEVIEW);
-		stretchSportImageView = (ImageView) findViewById(ID_STRETCH_SPORT_IMAGEVIEW);
-		sweatSportImageView = (ImageView) findViewById(ID_SWEAT_SPORT_IMAGEVIEW);
+		upperSportCardView = (CardView) findViewById(ID_UPPER_SPORT_CARDVIEW);
+		upperSport2CardView = (CardView) findViewById(ID_UPPER_SPORT_2_CARDVIEW);
+		lowerSportCardView = (CardView) findViewById(ID_LOWER_SPORT_CARDVIEW);
+		allBodySportCardView = (CardView) findViewById(ID_ALL_BODY_SPORT_CARDVIEW);
+		stretchSportCardView = (CardView) findViewById(ID_STRETCH_SPORT_CARDVIEW);
+		sweatSportCardView = (CardView) findViewById(ID_SWEAT_SPORT_CARDVIEW);
 
-		goButton = (Button)findViewById(R.id.main_goButton);		
-				
-		upperSportImageView.setOnClickListener(this);
-		upperSport2ImageView.setOnClickListener(this);
-		lowerSportImageView.setOnClickListener(this);
-		allBodySportImageView.setOnClickListener(this);
-		stretchSportImageView.setOnClickListener(this);
-		sweatSportImageView.setOnClickListener(this);
+		goButton = (FloatingActionButton)findViewById(R.id.main_goButton);
+
+		upperSportCardView.setOnClickListener(this);
+		upperSport2CardView.setOnClickListener(this);
+		lowerSportCardView.setOnClickListener(this);
+		allBodySportCardView.setOnClickListener(this);
+		stretchSportCardView.setOnClickListener(this);
+		sweatSportCardView.setOnClickListener(this);
 		
 		goButton.setOnClickListener(this);
 	}
@@ -152,34 +155,34 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View view) {
 		switch (view.getId()) {
-		case ID_UPPER_SPORT_IMAGEVIEW:
+		case ID_UPPER_SPORT_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[0], background[0], imageSource[0], videoId[0]);
+			updateBlackBoardData(ClickType.Add, sports[0], backgroundColor[0], imageSource[0], videoId[0]);
 			break;
 
-		case ID_UPPER_SPORT_2_IMAGEVIEW:
+		case ID_UPPER_SPORT_2_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[1], background[1], imageSource[1], videoId[1]);
+			updateBlackBoardData(ClickType.Add, sports[1], backgroundColor[1], imageSource[1], videoId[1]);
 			break;
 
-		case ID_LOWER_SPORT_IMAGEVIEW:
+		case ID_LOWER_SPORT_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[2], background[2], imageSource[2], videoId[2]);
+			updateBlackBoardData(ClickType.Add, sports[2], backgroundColor[2], imageSource[2], videoId[2]);
 			break;
 
-		case ID_ALL_BODY_SPORT_IMAGEVIEW:
+		case ID_ALL_BODY_SPORT_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[3], background[3], imageSource[3], videoId[3]);
+			updateBlackBoardData(ClickType.Add, sports[3], backgroundColor[3], imageSource[3], videoId[3]);
 			break;
 
-		case ID_STRETCH_SPORT_IMAGEVIEW:
+		case ID_STRETCH_SPORT_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[4], background[4], imageSource[4], videoId[4]);
+			updateBlackBoardData(ClickType.Add, sports[4], backgroundColor[4], imageSource[4], videoId[4]);
 			break;
 
-		case ID_SWEAT_SPORT_IMAGEVIEW:
+		case ID_SWEAT_SPORT_CARDVIEW:
 
-			updateBlackBoardData(ClickType.Add, sports[5], background[5], imageSource[5], videoId[5]);
+			updateBlackBoardData(ClickType.Add, sports[5], backgroundColor[5], imageSource[5], videoId[5]);
 			break;
 			
 		case R.id.main_goButton:
@@ -194,38 +197,67 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	private void updateBlackBoardData(ClickType clickType, String sportsName,
-			int backgroundID, int imageSource, String videoId) {
+			int backgroundColor, int imageSource, String videoId) {
+        Log.i(TAG, "updateBlackBoardData: "+sportsName);
 		if(blackBoardList.size()<6){
 		
 			if(clickType.equals(ClickType.Add)){
-				BlackBoardItem item = new BlackBoardItem(sportsName, backgroundID, imageSource, videoId);
+				BlackBoardItem item = new BlackBoardItem(this, sportsName, backgroundColor, imageSource, videoId);
 				blackBoardList.add(item);
-			}
+
+                updateBlackBoardView(clickType, blackBoardList.size()-1);
+            }
 			
-			updateBlackBoardView();
 		}else{
 			Toast.makeText(this, getString(R.string.you_can_only_choose_at_most_six_sports_a_time), Toast.LENGTH_SHORT).show();
 		}
 	}
 
-	private void updateBlackBoardView() {
+	private void updateBlackBoardView(ClickType type, int indexInBliackBoard) {
 		
 		firstRowblackBoardLayout.removeAllViews();
 		secondRowblackBoardLayout.removeAllViews();
 
+        if(ClickType.Remove.equals(type)){
+            CardView deletedCardView = blackBoardList.get(indexInBliackBoard).getCardView();
+
+            if(deletedCardView.getVisibility() == View.VISIBLE){
+                deletedCardView.startAnimation(fadeOutAnimation);
+                deletedCardView.setVisibility(View.INVISIBLE);
+            }
+        }
+
 		if(blackBoardList!=null && !blackBoardList.isEmpty()){
 			for(int i=0; i<blackBoardList.size(); i++){
-				
-				ImageView itemView = new ImageView(this);
-				LinearLayout.LayoutParams itemParams = new LinearLayout.LayoutParams(120, 120);
-				itemParams.gravity = Gravity.CENTER;
-				itemView.setLayoutParams(itemParams);
-				itemView.setBackgroundResource(blackBoardList.get(i).getBackgroundResource());
-				itemView.setImageResource(blackBoardList.get(i).getImageSource());
-				itemView.setTag(Integer.valueOf(i));
-				itemView.setOnClickListener(blackBoardImageClickListener);
 
-				
+//                CardView cardView = new CardView(this);
+//                LinearLayout.LayoutParams cardViewParams = new LinearLayout.LayoutParams(120, 120);
+//                cardViewParams.gravity = Gravity.CENTER;
+//                cardView.setCardBackgroundColor(getResources().getColor(blackBoardList.get(i).getBackgroundColor()));
+//                cardView.setCardElevation(getResources().getDimension(R.dimen.board_elevation));
+//                cardView.setRadius(getResources().getDimension(R.dimen.board_corner_sport_button));
+//                cardView.setLayoutParams(cardViewParams);
+//
+//
+//                ImageView itemView = new ImageView(this);
+//				FrameLayout.LayoutParams itemParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+//				itemView.setLayoutParams(itemParams);
+//				itemView.setImageResource(blackBoardList.get(i).getImageSource());
+//				itemView.setTag(Integer.valueOf(i));
+//                itemView.setClickable(true);
+//				itemView.setOnClickListener(blackBoardImageClickListener);
+//
+//                cardView.addView(itemView, itemParams);
+
+                CardView cardView = blackBoardList.get(i).genCardView(i);
+                cardView.setOnClickListener(blackBoardImageClickListener);
+                if(ClickType.Add.equals(type) && i==blackBoardList.size()-1) {
+                    cardView.setVisibility(View.INVISIBLE);
+                    cardView.startAnimation(fadeInAnimation);
+                    cardView.setVisibility(View.VISIBLE);
+                }
+
+
 				if(i>0){
 					ImageView plus = new ImageView(this);
 					plus.setImageResource(R.drawable.ic_plus);
@@ -240,13 +272,13 @@ public class MainActivity extends Activity implements OnClickListener {
 				}
 				
 				if(i<=2){
-					firstRowblackBoardLayout.addView(itemView);
+					firstRowblackBoardLayout.addView(cardView);
 				}else{
-					secondRowblackBoardLayout.addView(itemView);
+					secondRowblackBoardLayout.addView(cardView);
 				}
 			}
-			
-			if(goButton.getVisibility() == View.INVISIBLE){
+
+            if(goButton.getVisibility() == View.INVISIBLE){
 				goButton.setVisibility(View.VISIBLE);
 				goButton.startAnimation(fadeInAnimation);
 			}
@@ -261,33 +293,33 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 	
 	public BlackBoardItem createRestItem(){
-		BlackBoardItem restItem = new BlackBoardItem("rest", -1, -1, restVideoId);
+		BlackBoardItem restItem = new BlackBoardItem(this, "rest", -1, -1, restVideoId);
 		return restItem;
 	}
 	
 	private void performClickGo(){
-		
-		VideoQueue.getInstance().clear();
-		
-		ArrayList<String> videoIds = new ArrayList<String>();
-		Log.i(TAG, "item: "+blackBoardList.size());
-		for(int i =0; i<blackBoardList.size(); i++){
-			VideoQueue.getInstance().addToQueue(blackBoardList.get(i));
-			Log.i(TAG, "add item: "+blackBoardList.get(i).getSportsName());
-			videoIds.add(blackBoardList.get(i).videoId);
 
-			if(i < blackBoardList.size()-1){
-				BlackBoardItem restItem = createRestItem();
-				VideoQueue.getInstance().addToQueue(restItem);
-				Log.i(TAG, "add item: "+restItem.getSportsName());
-				videoIds.add(restItem.videoId);
+            VideoQueue.getInstance().clear();
 
-			}
-			
-		}
-		
-		VideoQueue.getInstance().setVideoIds(videoIds);
-		startActivity(new Intent(this, VideoActivity.class));
+            ArrayList<String> videoIds = new ArrayList<String>();
+            Log.i(TAG, "item: " + blackBoardList.size());
+            for (int i = 0; i < blackBoardList.size(); i++) {
+                VideoQueue.getInstance().addToQueue(blackBoardList.get(i));
+                Log.i(TAG, "add item: " + blackBoardList.get(i).getSportsName());
+                videoIds.add(blackBoardList.get(i).videoId);
+
+                if (i < blackBoardList.size() - 1) {
+                    BlackBoardItem restItem = createRestItem();
+                    VideoQueue.getInstance().addToQueue(restItem);
+                    Log.i(TAG, "add item: " + restItem.getSportsName());
+                    videoIds.add(restItem.videoId);
+
+                }
+
+            }
+
+            VideoQueue.getInstance().setVideoIds(videoIds);
+            startActivity(new Intent(this, VideoActivity.class));
 	}
 
 	enum ClickType {
