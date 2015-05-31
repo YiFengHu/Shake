@@ -18,10 +18,11 @@
     </style>
 
     <style name="ShakeTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#673AB7</item>
-        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorPrimary">@color/light_brown</item>
+        <item name="colorPrimaryDark">@color/dark_brown</item>
         <item name="colorAccent">@android:color/white</item>
-        <item name="android:windowBackground">@color/background_yellow</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@color/light_brown_background</item>
     </style>
 
 </resources>

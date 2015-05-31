@@ -13,9 +13,13 @@ import com.nptu.dse.shake.RequestCode;
 import com.nptu.dse.shake.queue.VideoQueue;
 import com.nptu.dse.shake.queue.VideoQueue.QueueExecutor;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.util.Log;
+import android.view.View;
 
 public class VideoActivity extends YouTubeFailureRecoveryActivity{
 
@@ -95,7 +99,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity{
 			YouTubePlayer player, boolean wasRestored) {
 		if (!wasRestored) {
 			youtubePlayer = player;
-			youtubePlayer.setFullscreen(true);
+//			youtubePlayer.setFullscreen(true);
 			youtubePlayer.setPlayerStateChangeListener(playerListener);
 
             nextPlayList();

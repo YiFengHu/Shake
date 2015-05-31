@@ -10,4 +10,8 @@
     <color name="background_yellow">#fffff3</color>
     <color name="shadow_grey">#CBCBCB</color>
 
+    <color name="dark_brown">#5D4037</color>
+    <color name="light_brown">#795548</color>
+    <color name="light_brown_background">#D7CCC8</color>
+
 </resources>

@@ -21,8 +21,6 @@ public class BlackBoardItem implements QueueExecutor {
 	private String sportsName = null;
 	private int backgroundColor = 0;
 	private int imageSource = 0;
-    private CardView cardView = null;
-    private ImageView imageView = null;
 	public String videoId = null;
 
 	public BlackBoardItem(Context context, String sportsName, int backgroundColor, int imageSource,
@@ -52,35 +50,24 @@ public class BlackBoardItem implements QueueExecutor {
 
     public CardView genCardView(int blackBoardIndex){
 
-        if(cardView == null) {
-            cardView = new CardView(context);
-            LinearLayout.LayoutParams cardViewParams = new LinearLayout.LayoutParams(120, 120);
-            cardViewParams.gravity = Gravity.CENTER;
-            cardView.setCardBackgroundColor(context.getResources().getColor(getBackgroundColor()));
-            cardView.setCardElevation(context.getResources().getDimension(R.dimen.board_elevation));
-            cardView.setRadius(context.getResources().getDimension(R.dimen.board_corner_sport_button));
-            cardView.setClickable(true);
-            cardView.setTag(blackBoardIndex);
-            cardView.setLayoutParams(cardViewParams);
+        CardView cardView = new CardView(context);
+        LinearLayout.LayoutParams cardViewParams = new LinearLayout.LayoutParams(120, 120);
+        cardViewParams.gravity = Gravity.CENTER;
+        cardView.setCardBackgroundColor(context.getResources().getColor(getBackgroundColor()));
+        cardView.setCardElevation(context.getResources().getDimension(R.dimen.board_elevation));
+        cardView.setRadius(context.getResources().getDimension(R.dimen.board_corner_sport_button));
+        cardView.setClickable(true);
+        cardView.setTag(blackBoardIndex);
+        cardView.setLayoutParams(cardViewParams);
 
+        ImageView imageView = new ImageView(context);
+        FrameLayout.LayoutParams itemParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+        imageView.setLayoutParams(itemParams);
+        imageView.setImageResource(getImageSource());
 
-            imageView = new ImageView(context);
-            FrameLayout.LayoutParams itemParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
-            imageView.setLayoutParams(itemParams);
-            imageView.setImageResource(getImageSource());
-
-            cardView.addView(imageView, itemParams);
-        }
+        cardView.addView(imageView, itemParams);
 
         return cardView;
-    }
-
-    public CardView getCardView(){
-        return cardView;
-    }
-
-    public void setCardViewClickLitener(View.OnClickListener listener){
-        cardView.setOnClickListener(listener);
     }
 
 	@Override
