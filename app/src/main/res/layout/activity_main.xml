@@ -1,0 +1,195 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="10"
+    tools:context="com.nptu.dse.shake.ui.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:id="@+id/main_firstSportButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <LinearLayout
+                android:id="@+id/main_upperSportLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+	            <ImageView
+	                android:id="@+id/main_upperSportImageView"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:background="@drawable/selector_yellow_button"
+	                android:clickable="true"
+	                android:src="@drawable/ic_upper_boddy_sport2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_upperSport2Layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_upperSport2ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_red_button"
+                android:clickable="true"
+                android:src="@drawable/ic_upper_body_sport" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_lowerSportLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_lowerSportImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_green_button"
+                android:clickable="true"
+                android:src="@drawable/ic_lower_body_sport" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_secondSportButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <LinearLayout
+                android:id="@+id/main_lallBodySportLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_allBodySportImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_light_blue_button"
+                android:clickable="true"
+                android:src="@drawable/ic_all_body_sport" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_stretchSportLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_stretchSportImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_purple_button"
+                android:clickable="true"
+                android:src="@drawable/ic_stretch_sport" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_sweatSportLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/main_sweatSportImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_blue_button"
+                android:clickable="true"
+                android:src="@drawable/ic_sweat_sport" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="6"
+        android:background="@drawable/ic_blackboard_2"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:id="@+id/main_firstRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_secondRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_thirdRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <Button
+                android:id="@+id/main_goButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|bottom"
+                android:layout_weight="1"
+                android:background="@drawable/selector_go_button"
+                android:text="@string/go"
+                android:textSize="30sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!--<ImageView-->
+        <!--android:id="@+id/gridItem_imageView"-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_margin="5dp"-->
+		<!--android:scaleType="centerInside"-->
+        <!--android:background="@drawable/selector_blue_button"/>-->
+
+    <ImageView
+        android:id="@+id/gridItem_sportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:src="@drawable/ic_upper_boddy_sport2"/>
+
+
+</RelativeLayout>

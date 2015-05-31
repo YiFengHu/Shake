@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromYDelta="100%"
+    android:toYDelta="0"
+    android:duration="300">
+	
+
+</translate>
+<!-- From: file:/Users/he/Android%20Develop/Project/Android%20Studio/Shake/MaterialDesign/res/anim/snackbar_show_animation.xml -->

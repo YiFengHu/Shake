@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-a86f4a9a17f209d6f1b9bd60bea919225c74f7c5.jar" />
+    </item>
+    <item
+        jar="/Users/he/Android Develop/Project/Android Studio/Shake/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
+        <dex dex="/Users/he/Android Develop/Project/Android Studio/Shake/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-a86f4a9a17f209d6f1b9bd60bea919225c74f7c5.jar" />
+    </item>
+
+</items>

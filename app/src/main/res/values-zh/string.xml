@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shaking</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">設定</string>
+
+    <string name="you_can_only_choose_at_most_six_sports_a_time">只能選擇6個唷!</string>
+    <string name="go">Go</string>
+    
+    <!-- Youtube -->
+    <string name="youtube_error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+</resources>

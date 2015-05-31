@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="10"
+    tools:context="com.nptu.dse.shake.ui.MainActivity"
+    android:background="@color/background_yellow" >
+
+    <GridView
+        android:id="@+id/mainGrid_gridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:numColumns="3"
+        android:layout_weight="4"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="6"
+        android:background="@drawable/ic_blackboard_2"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:id="@+id/mainGrid_firstRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mainGrid_secondRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mainGrid_thirdRowblackBoardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <Button
+                android:id="@+id/mainGrid_goButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|bottom"
+                android:layout_weight="1"
+                android:background="@drawable/selector_go_button"
+                android:text="@string/go"
+                android:textSize="30sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
