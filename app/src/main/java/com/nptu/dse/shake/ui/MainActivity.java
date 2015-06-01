@@ -367,11 +367,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             child.setScaleX(0.5F);
             child.setScaleY(0.7F);
             child.setAlpha(0F);
+
+            float originY = child.getY();
+            child.setY(originY+30);
+
             PropertyValuesHolder pvhSX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1);
             PropertyValuesHolder pvhSY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1);
             PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat(View.ALPHA, 1);
+            PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat(View.Y, originY);
 
-            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(cardViews[i], pvhAlpha, pvhSX, pvhSY);
+            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(cardViews[i], pvhAlpha, pvhSX, pvhSY, pvhY);
             anim.setDuration(100);
             anim.setInterpolator(decelerateInterpolator);
             childAnims[i] = anim;
