@@ -6,12 +6,10 @@ import com.nptu.dse.shake.BlackBoardItem;
 import com.nptu.dse.shake.R;
 import com.nptu.dse.shake.queue.VideoQueue;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TimeInterpolator;
-import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -27,13 +25,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+
 import android.view.animation.Animation;
+
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -99,25 +95,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private CardView stretchSportsCardview = null;
     private CardView sweatSportsCardview = null;
 
-    private View cardViewContainer = null;
-
-    ViewTreeObserver.OnPreDrawListener mPreDrawListener =
-            new ViewTreeObserver.OnPreDrawListener() {
-
-                @Override
-                public boolean onPreDraw() {
-                    cardViewContainer.getViewTreeObserver().removeOnPreDrawListener(this);
-                    cardViewContainer.animate().setDuration(500).withEndAction(new Runnable() {
-
-                        @Override
-                        public void run() {
-                            revealSportCards();
-                        }
-                    });
-                    return false;
-                }
-            };
-
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -161,14 +138,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 			}
 		};
 
-        cardViewContainer = (View)findViewById(R.id.main_cardContainer);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        cardViewContainer.getViewTreeObserver().addOnPreDrawListener(mPreDrawListener);
-
+        revealSportCards();
     }
 
     private void initAnimation() {
@@ -214,7 +189,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         goButton = (FloatingActionButton)findViewById(R.id.main_goButton);
 		goButton.setOnClickListener(this);
 
-        revealSportCards();
 	}
 
     @Override
@@ -386,25 +360,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void revealSportCards(){
         TimeInterpolator decelerateInterpolator = new DecelerateInterpolator();
 
-        ObjectAnimator[] childAnims = new ObjectAnimator[6];
+        final ObjectAnimator[] childAnims = new ObjectAnimator[6];
         for (int i = 0; i < 6; ++i) {
             View child = cardViews[i];
 
-            child.setScaleX(0.8F);
-            child.setScaleY(0.8F);
+            child.setScaleX(0.5F);
+            child.setScaleY(0.7F);
             child.setAlpha(0F);
             PropertyValuesHolder pvhSX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1);
             PropertyValuesHolder pvhSY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1);
             PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat(View.ALPHA, 1);
 
-            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(cardViews[i], pvhSX, pvhSY, pvhAlpha);
+            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(cardViews[i], pvhAlpha, pvhSX, pvhSY);
             anim.setDuration(100);
             anim.setInterpolator(decelerateInterpolator);
             childAnims[i] = anim;
         }
+
         AnimatorSet set = new AnimatorSet();
         set.playSequentially(childAnims);
         set.start();
+
     }
 
 	enum ClickType {
